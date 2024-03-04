@@ -31,14 +31,4 @@ public class ChestActivator : MonoBehaviour
             chestScript.Show();
         }
     }
-
-    public void OnPointerClick(BaseEventData data)
-    {
-        Debug.Log("Clicked");
-        //if(data.button == PointerEventData.InputButton.Left)
-        //{
-            Debug.Log("Left Click");
-            ChangeState();
-        //}
-    }
 }
