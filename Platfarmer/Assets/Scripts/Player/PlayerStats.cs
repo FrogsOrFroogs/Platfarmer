@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     public static int curHealth;
     public static int maxHealth = 100;
     public static int attack = 5;
-    //[SerializeField] private HealthBar healthBar;
+    [SerializeField] private HealthBar healthBar;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
     {
         rb.position = spawnPoint.position;
         curHealth = maxHealth;
-        //healthBar.alterMaxHealth(maxHealth);
+        healthBar.alterMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
     private void Hurt(int hurtAmount)
     {
         curHealth -= hurtAmount;
-        //healthBar.alterHealth(curHealth);
+        healthBar.alterHealth(curHealth);
     }
 
     private void DeathCheck()
@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
         if(curHealth == 0)
         {
             curHealth = maxHealth;
-            //healthBar.alterHealth(curHealth);
+            healthBar.alterHealth(curHealth);
             rb.velocity = new Vector2(rb.velocity.x * 0f, rb.velocity.y * 0f);
             rb.position = spawnPoint.position;
         }
