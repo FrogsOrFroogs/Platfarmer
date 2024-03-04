@@ -7,7 +7,6 @@ public class PlayerStats : MonoBehaviour
     public static int curHealth;
     public static int maxHealth = 100;
     public static int attack = 5;
-    //currently has an error
     //[SerializeField] private HealthBar healthBar;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Rigidbody2D rb;
@@ -48,8 +47,6 @@ public class PlayerStats : MonoBehaviour
             //healthBar.alterHealth(curHealth);
             rb.velocity = new Vector2(rb.velocity.x * 0f, rb.velocity.y * 0f);
             rb.position = spawnPoint.position;
-            //return true;
         }
-        //return false;
     }
 }
